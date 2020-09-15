@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200913231020_AddedColumnToSeminar")]
-    partial class AddedColumnToSeminar
+    [Migration("20200915151351_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,6 +32,9 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Category")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -49,32 +52,6 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Seminars");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "101 Main St",
-                            City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 14, 1, 10, 20, 196, DateTimeKind.Local).AddTicks(1885),
-                            Name = "Seminar 101"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Address = "101 Main St",
-                            City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 14, 1, 10, 20, 199, DateTimeKind.Local).AddTicks(7666),
-                            Name = "Seminar 102"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Address = "101 Main St",
-                            City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 14, 1, 10, 20, 199, DateTimeKind.Local).AddTicks(7727),
-                            Name = "Seminar 103"
-                        });
                 });
 #pragma warning restore 612, 618
         }

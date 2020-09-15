@@ -14,6 +14,8 @@ namespace Persistence.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Category = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: false),
                     City = table.Column<string>(nullable: false),
                     DateTime = table.Column<DateTime>(nullable: false)
