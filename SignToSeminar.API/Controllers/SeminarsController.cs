@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Application.Seminars;
 using Domain;
-using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Persistence;
@@ -15,17 +11,20 @@ namespace SignToSeminar.API.Controllers
     [ApiController]
     public class SeminarsController : ControllerBase
     {
-        private readonly IMediator _mediator;
-        public SeminarsController(IMediator mediator)
+        private readonly DataContext _context;
+
+        public SeminarsController(DataContext context)
         {
-            _mediator = mediator;
+            _context = context;
         }
 
         // GET api/seminars
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Seminar>>> Get()
         {
-            return await _mediator.Send(new List.Query());
+            var seminars = await _context.Seminars.ToListAsync();
+
+            return Ok(seminars);
         }
 
         // GET api/seminar/5
