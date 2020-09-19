@@ -10,9 +10,13 @@ namespace Domain
         [Required]
         public string Name { get; set; }
 
+        [Required]
         public string Description { get; set; }
 
+        [Required]
         public string Category { get; set; }
+
+        public int availableSeats { get; set; }
 
         [Required]
         public string Address { get; set; }
