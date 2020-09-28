@@ -24,32 +24,10 @@ namespace SignToSeminar.API.Controllers
         {
             var seminars = await _context.Seminars.ToListAsync();
 
+            if (seminars == null)
+                return NotFound();
+
             return Ok(seminars);
-        }
-
-        // GET api/seminar/5
-        [HttpGet("{id}")]
-        public void Get(int id)
-        {
-
-        }
-
-        // POST api/seminars
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
-        }
-
-        // PUT api/seminars/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE api/seminars/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Domain
@@ -26,5 +27,10 @@ namespace Domain
 
         [Required]
         public DateTime DateTime { get; set; }
+        
+        [Required]
+        public bool active { get; set; }
+
+        public ICollection<UserSeminar> UserSeminars { get; set; }
     }
 }

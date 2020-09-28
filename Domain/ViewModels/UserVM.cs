@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace Domain
+namespace Domain.ViewModels
 {
-    public class User
+    public class UserVM
     {
-        public int Id { get; set; }
-
         [Required]
         public string Firstname { get; set; }
 
@@ -21,9 +18,11 @@ namespace Domain
         public string Email { get; set; }
 
         public string PhoneNumber { get; set; }
+
         public string City { get; set; }
+
         public string Address { get; set; }
 
-        public ICollection<UserSeminar> UserSeminars { get; set; }
+        public int seminarId { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200921133419_AddUserToDb")]
-    partial class AddUserToDb
+    [Migration("20200925232706_updateSeminarDate")]
+    partial class updateSeminarDate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -51,6 +51,9 @@ namespace Persistence.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("active")
+                        .HasColumnType("bit");
+
                     b.Property<int>("availableSeats")
                         .HasColumnType("int");
 
@@ -65,9 +68,10 @@ namespace Persistence.Migrations
                             Address = "101 Main St",
                             Category = "Science",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateTime = new DateTime(2020, 10, 10, 9, 57, 5, 729, DateTimeKind.Local).AddTicks(8125),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 101",
+                            active = false,
                             availableSeats = 0
                         },
                         new
@@ -76,9 +80,10 @@ namespace Persistence.Migrations
                             Address = "102 Main St",
                             Category = "History",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateTime = new DateTime(2020, 10, 10, 9, 57, 5, 733, DateTimeKind.Local).AddTicks(593),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 102",
+                            active = false,
                             availableSeats = 0
                         },
                         new
@@ -87,9 +92,10 @@ namespace Persistence.Migrations
                             Address = "103 Main St",
                             Category = "Economics",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateTime = new DateTime(2020, 10, 10, 9, 57, 5, 733, DateTimeKind.Local).AddTicks(682),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 103",
+                            active = false,
                             availableSeats = 0
                         },
                         new
@@ -98,9 +104,10 @@ namespace Persistence.Migrations
                             Address = "101 Main St",
                             Category = "Science",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateTime = new DateTime(2020, 10, 10, 9, 57, 5, 733, DateTimeKind.Local).AddTicks(689),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 101",
+                            active = false,
                             availableSeats = 0
                         },
                         new
@@ -109,9 +116,10 @@ namespace Persistence.Migrations
                             Address = "102 Main St",
                             Category = "History",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 9, 21, 0, 0, 0, 0, DateTimeKind.Local),
+                            DateTime = new DateTime(2020, 10, 10, 9, 57, 5, 733, DateTimeKind.Local).AddTicks(694),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 102",
+                            active = false,
                             availableSeats = 0
                         });
                 });
@@ -122,6 +130,12 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("City")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -140,7 +154,40 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Students");
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Domain.UserSeminar", b =>
+                {
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SeminarId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("DateSignUp")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("UserId", "SeminarId");
+
+                    b.HasIndex("SeminarId");
+
+                    b.ToTable("UserSeminars");
+                });
+
+            modelBuilder.Entity("Domain.UserSeminar", b =>
+                {
+                    b.HasOne("Domain.Seminar", "Seminar")
+                        .WithMany("UserSeminars")
+                        .HasForeignKey("SeminarId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.User", "User")
+                        .WithMany("UserSeminars")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

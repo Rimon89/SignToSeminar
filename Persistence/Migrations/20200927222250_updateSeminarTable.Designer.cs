@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence;
 
 namespace Persistence.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200927222250_updateSeminarTable")]
+    partial class updateSeminarTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,7 +68,7 @@ namespace Persistence.Migrations
                             Address = "101 Main St",
                             Category = "Science",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 10, 29, 10, 29, 9, 235, DateTimeKind.Local).AddTicks(3870),
+                            DateTime = new DateTime(2020, 10, 12, 10, 22, 50, 405, DateTimeKind.Local).AddTicks(4680),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 101",
                             active = true,
@@ -78,7 +80,7 @@ namespace Persistence.Migrations
                             Address = "102 Main St",
                             Category = "History",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 10, 20, 10, 29, 9, 238, DateTimeKind.Local).AddTicks(6259),
+                            DateTime = new DateTime(2020, 10, 16, 10, 22, 50, 408, DateTimeKind.Local).AddTicks(7662),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 102",
                             active = true,
@@ -90,7 +92,7 @@ namespace Persistence.Migrations
                             Address = "103 Main St",
                             Category = "Economics",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 10, 26, 10, 29, 9, 238, DateTimeKind.Local).AddTicks(6346),
+                            DateTime = new DateTime(2020, 10, 20, 10, 22, 50, 408, DateTimeKind.Local).AddTicks(7758),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 103",
                             active = true,
@@ -102,7 +104,7 @@ namespace Persistence.Migrations
                             Address = "101 Main St",
                             Category = "Science",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 11, 12, 10, 29, 9, 238, DateTimeKind.Local).AddTicks(6356),
+                            DateTime = new DateTime(2020, 10, 26, 10, 22, 50, 408, DateTimeKind.Local).AddTicks(7765),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 101",
                             active = true,
@@ -114,7 +116,7 @@ namespace Persistence.Migrations
                             Address = "102 Main St",
                             Category = "History",
                             City = "Gothenburg",
-                            DateTime = new DateTime(2020, 10, 12, 10, 29, 9, 238, DateTimeKind.Local).AddTicks(6360),
+                            DateTime = new DateTime(2020, 10, 29, 10, 22, 50, 408, DateTimeKind.Local).AddTicks(7770),
                             Description = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a,",
                             Name = "Seminar 102",
                             active = true,
