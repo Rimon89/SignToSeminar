@@ -75,7 +75,6 @@ namespace SignToSeminar.API.Controllers
             }
             catch (Exception)
             {
-
                 return BadRequest("You have already signed up for this seminar");
             }
 
