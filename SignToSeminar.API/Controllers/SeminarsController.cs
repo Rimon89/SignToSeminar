@@ -52,11 +52,12 @@ namespace SignToSeminar.API.Controllers
                 Name = request.Name,
                 Description = request.Description,
                 Category = request.Category,
-                availableSeats = request.availableSeats,
+                AvailableSeats = request.AvailableSeats,
                 Address = request.Address,
                 City = request.City,
                 DateTime = request.DateTime,
-                active = request.active
+                Active = request.Active,
+                HostedBy = request.HostedBy
             };
 
             await _context.Seminars.AddAsync(seminar);

@@ -60,8 +60,6 @@ namespace SignToSeminar.API.Controllers
                 return Ok();
             }
 
-            try
-            {
                 var attendee = new UserSeminar
                 {
                     Seminar = seminar,
@@ -69,16 +67,16 @@ namespace SignToSeminar.API.Controllers
                     DateSignUp = DateTime.Now
                 };
 
-                _context.UserSeminars.Add(attendee);
+            var userSeminar = _context.UserSeminars.FirstOrDefault(x => x.Seminar == attendee.Seminar && x.User == attendee.User);
 
-                await _context.SaveChangesAsync();
-            }
-            catch (Exception)
+            if(userSeminar == null)
             {
-                return BadRequest("You have already signed up for this seminar");
+                _context.UserSeminars.Add(attendee);
+                await _context.SaveChangesAsync();
+                return Ok();
             }
 
-            return Ok();
+            return BadRequest("You have already signed up for this seminar");
         }
     }
 }

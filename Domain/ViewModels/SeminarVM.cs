@@ -16,7 +16,7 @@ namespace Domain.ViewModels
         [Required]
         public string Category { get; set; }
 
-        public int availableSeats { get; set; }
+        public int AvailableSeats { get; set; }
 
         [Required]
         public string Address { get; set; }
@@ -28,6 +28,8 @@ namespace Domain.ViewModels
         public DateTime DateTime { get; set; }
 
         [Required]
-        public bool active { get; set; }
+        public bool Active { get; set; }
+
+        public string HostedBy { get; set; }
     }
 }
