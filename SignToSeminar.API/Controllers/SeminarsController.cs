@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Domain;
 using Domain.ViewModels;
@@ -27,7 +28,7 @@ namespace SignToSeminar.API.Controllers
             if (seminars == null)
                 return NotFound();
 
-            return Ok(seminars);
+            return Ok(seminars.OrderBy(date => date.DateTime));
         }
 
         [HttpGet("{id}")]
