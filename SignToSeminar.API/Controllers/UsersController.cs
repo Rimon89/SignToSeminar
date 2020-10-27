@@ -29,7 +29,7 @@ namespace SignToSeminar.API.Controllers
             var userFromDb = _context.Users.SingleOrDefault(u => u.Email == request.Email);
             var seminar = await _context.Seminars.FindAsync(request.seminarId);
 
-            if (seminar == null)
+            if (seminar == null || seminar.AvailableSeats <= 0)
                 return BadRequest();
 
             if (userFromDb == null)
@@ -54,24 +54,25 @@ namespace SignToSeminar.API.Controllers
                 };
 
                 await _context.UserSeminars.AddAsync(newAttendee);
-
+                seminar.AvailableSeats = seminar.AvailableSeats - 1;
                 await _context.SaveChangesAsync();
 
                 return Ok();
             }
 
-                var attendee = new UserSeminar
-                {
-                    Seminar = seminar,
-                    User = userFromDb,
-                    DateSignUp = DateTime.Now
-                };
+            var attendee = new UserSeminar
+            {
+                Seminar = seminar,
+                User = userFromDb,
+                DateSignUp = DateTime.Now
+            };
 
             var userSeminar = _context.UserSeminars.FirstOrDefault(x => x.Seminar == attendee.Seminar && x.User == attendee.User);
 
-            if(userSeminar == null)
+            if (userSeminar == null)
             {
                 _context.UserSeminars.Add(attendee);
+                seminar.AvailableSeats = seminar.AvailableSeats - 1;
                 await _context.SaveChangesAsync();
                 return Ok();
             }
